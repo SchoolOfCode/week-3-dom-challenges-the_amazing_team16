@@ -13,3 +13,17 @@ Expected Outcomes:
 */
 
 // Place your plan and solution below!
+//Grab the id of the canvas
+//Select colour picker using id value
+//Find colour value
+//Create a function to apply colour value to canvas
+//Add event listener so that when colour picker is clicked, the canvas colour is changed.
+
+const canvas = document.getElementById("canvas");
+const colorPicker = document.getElementById("colorPicker");
+
+function changeColor() {
+  canvas.style.backgroundColor = colorPicker.value; // Applied the selected colour and select a value
+}
+
+colorPicker.addEventListener("input", changeColor);
