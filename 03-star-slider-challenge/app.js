@@ -19,18 +19,24 @@ Expected Outcomes:
 // Make a function that adds/removes star spans depending on value of slider
 // Attach event listener to slider that instantly updates amount of stars
 
-const sliderValue = document.getElementById("starSlider").value;
+const slider = document.getElementById("starSlider");
 const starContainer = document.getElementById("stars");
 const star = document.querySelector(".star-icon");
 
- const starCount = parseInt(starSlider.value);
- console.log(starCount);
-
 function starCounter(){
-  for(let i = 1; i < starCount; i++){
-    starContainer.appendChild(star);
-    //document.body.appendChild(newElement)
+  
+  //Remove all stars instantly when function is called
+  starContainer.innerHTML = "";
+
+  const starCount = parseInt(slider.value);
+
+  for(let i = 0; i < starCount; i++){
+    console.log('This is an iteration');
+    //const newStar = star.cloneNode();
+  const clone = star.cloneNode(true);
+  starContainer.appendChild(clone);
+
   }
 }
 
-starContainer.addEventListener("input", starCounter);
+slider.addEventListener("input", starCounter);
